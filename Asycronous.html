@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>JavaScript Promise(Addition Example)</h2>
+    <p id="demo"></p>
+
+    <script>
+      let promise = new Promise(function (resolve, reject) {
+        let a = 5;
+        let b = null;
+        let result = a + b;
+
+        if (typeof b === "number") {
+          resolve("The sum is: " + result);
+        } else {
+          reject("Error: b is not a number");
+        }
+      });
+
+      promise
+        .then(function (message) {
+          document.getElementById("demo").innerHTML = message;
+        })
+        .catch(function (error) {
+          document.getElementById("demo").innerHTML = error;
+        });
+    </script>
+  </body>
+</html>
